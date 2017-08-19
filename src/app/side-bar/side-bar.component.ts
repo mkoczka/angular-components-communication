@@ -1,4 +1,4 @@
-import { Component, HostBinding } from '@angular/core';
+import { Component, HostBinding, Input } from '@angular/core';
 
 @Component({
   selector: './app-side-bar',
@@ -7,11 +7,7 @@ import { Component, HostBinding } from '@angular/core';
 })
 export class SideBarComponent {
 
-  @HostBinding('class.is-open')
+  @HostBinding('class.is-open') @Input()
   isOpen = false;
-
-  toggle() {
-    this.isOpen = !this.isOpen;
-  }
 
 }

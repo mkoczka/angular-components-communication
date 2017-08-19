@@ -1,4 +1,4 @@
-import { Component, Input, HostListener } from '@angular/core';
+import { Component, Output, EventEmitter, HostListener } from '@angular/core';
 import { SideBarComponent } from '../side-bar/side-bar.component';
 
 @Component({
@@ -8,11 +8,11 @@ import { SideBarComponent } from '../side-bar/side-bar.component';
 })
 export class SideBarToggleComponent {
 
-  @Input() sideBar: SideBarComponent;
+  @Output() toggle: EventEmitter<null> = new EventEmitter();
 
   @HostListener('click')
   click() {
-    this.sideBar.toggle();
+    this.toggle.emit();
   }
 
 }
