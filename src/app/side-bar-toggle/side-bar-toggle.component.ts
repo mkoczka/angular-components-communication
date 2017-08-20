@@ -1,5 +1,5 @@
-import { Component, Output, EventEmitter, HostListener } from '@angular/core';
-import { SideBarComponent } from '../side-bar/side-bar.component';
+import { Component, HostListener } from '@angular/core';
+import { SideBarService } from '../side-bar/side-bar.service';
 
 @Component({
   selector: './app-side-bar-toggle',
@@ -8,11 +8,13 @@ import { SideBarComponent } from '../side-bar/side-bar.component';
 })
 export class SideBarToggleComponent {
 
-  @Output() toggle: EventEmitter<null> = new EventEmitter();
+  constructor(
+    private sideBarService: SideBarService
+  ) { }
 
   @HostListener('click')
   click() {
-    this.toggle.emit();
+    this.sideBarService.toggle();
   }
 
 }

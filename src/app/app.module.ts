@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { SideBarComponent } from './side-bar/side-bar.component';
 import { SideBarToggleComponent } from './side-bar-toggle/side-bar-toggle.component';
+import { SideBarService } from './side-bar/side-bar.service';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,9 @@ import { SideBarToggleComponent } from './side-bar-toggle/side-bar-toggle.compon
   imports: [
     BrowserModule
   ],
-  providers: [],
+  providers: [
+    SideBarService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
